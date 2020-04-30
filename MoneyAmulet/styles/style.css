@@ -127,12 +127,6 @@ footer {
     position: relative;
 }
 
-.order-left {
-    max-width: 450px;
-    flex: 0 0 450px;
-}
-
-
 .order-title {
     font-family: 'Montserrat ExtraBold';
     font-size: 67px;
@@ -420,6 +414,16 @@ select {
     background: url("../img/help-bg.png") no-repeat center;
     background-size: cover;
     padding: 80px 0 90px;
+    position: relative;
+}
+
+.help-title {
+    font-size: 57px;
+    line-height: 57px;
+    color: #000;
+    font-family: 'Montserrat ExtraBold';
+    text-transform: uppercase;
+    margin-bottom: 40px;
 }
 
 .help-text {
@@ -651,7 +655,7 @@ select {
 .slider-item {
     max-width: 310px;
     width: 100%;
-    border: 2px solid #f4eb95;
+    border: 2px solid #b4b4b4;
     padding: 15px 24px 30px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     margin: 0 17px 35px;
@@ -707,33 +711,58 @@ select {
         top: 0;
     }
 
-    .order-product {
-        display: none;
-    }
-
-    .order-left {
-        max-width: 100%;
-        flex: 0 0 100%;
-    }
-
-    .product-label {
-        margin: 0 auto;
-    }
-
-    .order-title {
-        text-align: center;
-    }
 
     .order-list {
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         max-width: 100%;
-        justify-content: center;
+        justify-content: flex-start;
+    }
+
+    .order-right {
+        align-items: flex-start;
+    }
+
+    .order-title {
+        font-size: 40px;
+        line-height: 40px;
+        margin: 20px 0;
+    }
+
+    .product-subText {
+        font-size: 20px;
+    }
+
+    .orderList-block {
+        margin-left: 0;
+    }
+
+    .order-product {
+        max-width: 200px;
     }
 
     .orderList-items {
         margin: 10px;
+    }
+
+    .sick {
+        background-position-x: 27%;
+    }
+
+    .sick:before {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 150px 0 125px;
+        height: 100%;
+        top: 0;
+    }
+
+    .phrase {
+        background-position-x: 53%;
     }
 
     .how-itemsBlock {
@@ -754,6 +783,7 @@ select {
 
     .slider {
         max-width: 695px;
+        margin: 0 auto;
     }
 
     .slider-item {
@@ -764,15 +794,63 @@ select {
 }
 
 @media screen and (max-width: 768px) {
-    .sick:before {
+
+    .product-logo {
+        justify-content: center;
+    }
+
+    .order-title,
+    .orderList-title {
+        text-align: center;
+    }
+
+    .order-list {
+        justify-content: center;
+    }
+
+    header, footer {
+        background-position-x: 58%;
+    }
+
+    .order-product {
+        left: -280px;
+        max-width: 300px;
+    }
+
+    .phrase {
+        background-position-x: 65%;
+        padding: 20px 0;
+    }
+
+    .phrase-title {
+        text-align: center;
+    }
+
+    .phrase:before {
         content: '';
         display: block;
         width: 100%;
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.9);
-        padding: 150px 0 125px;
+        background-color: rgba(255, 255, 255, 0.5);
         height: 100%;
         top: 0;
+        z-index: 0;
+    }
+
+    .help,
+    .work,
+    .stop,
+    .how,
+    .comment {
+        padding: 20px 0;
+    }
+
+    .work-item {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .how {
+        margin-top: 0;
     }
 
     .how-item-2:before, .how-item-2:after {
@@ -783,26 +861,76 @@ select {
         margin: 15px 0;
     }
 
+    .stop-item {
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+
+    .stop-img {
+        width: 100%;
+        display: block;
+        order: 1;
+    }
+
+    .stop-text {
+        height: initial;
+        padding: 40px 40px 40px 90px;
+        order: 2;
+    }
+
+    .stop-text_1:before, .stop-text_2:before, .stop-text_3:before, .stop-text_4:before {
+        left: 5px;
+    }
+
+    .stop-text_1:before {
+        left: 25px;
+    }
+
+    .stop-footer {
+        margin-top: 20px;
+    }
+
     .slider {
         max-width: 350px;
+    }
+
+    .text-big {
+        font-size: 40px;
+        line-height: 40px;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .mob-product .order-product {
-        transform: scale(1.3);
-        margin: 70px 0 50px;
+
+    header, footer {
+        padding: 0;
+        background-position-x: 50%;
     }
 
-    .mob-product {
-        overflow: hidden;
+    .order-product {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .order-right {
+        justify-content: center;
+    }
+
+    .form-block {
+        margin-bottom: 20px;
     }
 
     .order-title,
     .sick-title,
-    .comment-title {
-        font-size: 40px;
-        line-height: 45px;
+    .comment-title,
+    .phrase-title,
+    .text-big,
+    .help-title,
+    .work-title {
+        font-size: 32px;
+        line-height: 32px;
         margin: 20px 5px;
     }
 
@@ -817,6 +945,30 @@ select {
         flex: 0 0 100%;
     }
 
+    .help {
+        background-position-x: 57%;
+    }
+
+    .help:before {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 100%;
+        top: 0;
+        z-index: 0;
+    }
+
+    .how-text {
+        padding: 0;
+    }
+
+    .stop-text {
+        padding: 15px 15px 15px 90px;
+    }
+
+
     .slider {
         padding: 0;
     }
@@ -825,4 +977,18 @@ select {
         max-width: 320px;
     }
 
+}
+
+.slick-dots li {
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.slick-dots .slick-active {
+    background-color: #f4eb95;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li button:before {
+    opacity: 0;
 }
