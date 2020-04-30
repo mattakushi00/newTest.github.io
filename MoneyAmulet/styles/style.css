@@ -352,14 +352,17 @@ select {
     width: 100%;
     z-index: 1;
 }
+
 .order-nuclear_1 {
     left: -250px;
     animation: nuclear 1.5s ease-in-out infinite;
 }
+
 .order-nuclear_2 {
     left: 250px;
     animation: nuclear 2.5s ease infinite;
 }
+
 .order-nuclear_3 {
     left: 170px;
     animation: nuclear 3s ease-in infinite;
@@ -454,24 +457,31 @@ select {
 .phrase-item_1 {
     animation: move 2s ease-in-out infinite;
 }
+
 .phrase-item_2 {
     animation: move 3s ease-in-out infinite;
 }
+
 .phrase-item_3 {
     animation: move 1.5s ease-in-out infinite;
 }
+
 .phrase-item_4 {
     animation: move 2.5s ease-in-out infinite;
 }
+
 .phrase-item_5 {
     animation: move 3.5s ease-in-out infinite;
 }
+
 .phrase-item_6 {
     animation: move 1s ease-in-out infinite;
 }
+
 .phrase-item_7 {
     animation: move 5s ease-in-out infinite;
 }
+
 .phrase-item_8 {
     animation: move 4.5s ease-in-out infinite;
 }
@@ -496,14 +506,14 @@ select {
 .ufo {
     width: 50px;
     height: 50px;
-    background-color: rgba(250, 250, 250,0.3);
+    background-color: rgba(250, 250, 250, 0.3);
     border-radius: 50%;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     margin: auto;
-    box-shadow: 0 0 30px rgb(200,200,200);
+    box-shadow: 0 0 30px rgb(200, 200, 200);
     opacity: 0;
     z-index: 0;
 }
@@ -830,7 +840,22 @@ select {
     }
 
     .order-nuclear {
-        bottom: -350px;
+        bottom: -320px;
+    }
+
+    .order-nuclear_1 {
+        left: -200px;
+        animation: nuclear 1.5s ease-in-out infinite;
+    }
+
+    .order-nuclear_2 {
+        left: 150px;
+        animation: nuclear 2.5s ease infinite;
+    }
+
+    .order-nuclear_3 {
+        left: 200px;
+        animation: nuclear 3s ease-in infinite;
     }
 
     header,
@@ -847,6 +872,8 @@ select {
         flex-wrap: wrap;
         max-width: 100%;
         justify-content: flex-start;
+        position: relative;
+        z-index: 2;
     }
 
     .order-right {
@@ -940,6 +967,30 @@ select {
 }
 
 @media screen and (max-width: 768px) {
+
+    header:before {
+        bottom: -430px;
+        left: -230px;
+    }
+
+    .order-nuclear {
+        bottom: -550px;
+    }
+
+    .order-nuclear_1 {
+        left: -550px;
+        animation: nuclear 1.5s ease-in-out infinite;
+    }
+
+    .order-nuclear_2 {
+        left: 0;
+        animation: nuclear 2.5s ease infinite;
+    }
+
+    .order-nuclear_3 {
+        left: 50px;
+        animation: nuclear 3s ease-in infinite;
+    }
 
     .product-logo {
         justify-content: center;
@@ -1062,6 +1113,11 @@ select {
     header,
     footer {
         padding-top: 300px;
+    }
+
+    header:before,
+    .order-nuclear {
+        display: none;
     }
 
     .order-product {
