@@ -145,6 +145,12 @@ footer:before {
     position: relative;
 }
 
+.order-left,
+.order-right {
+    position: relative;
+    z-index: 1;
+}
+
 .order-title {
     font-family: 'Montserrat ExtraBold';
     font-size: 67px;
@@ -1032,7 +1038,7 @@ select {
         display: block;
         width: 100%;
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.8);
         height: 100%;
         top: 0;
         z-index: 0;
@@ -1111,11 +1117,23 @@ select {
     header, footer {
         padding: 0;
         background-position-x: 50%;
+        padding-top: 300px;
     }
 
-    header,
-    footer {
-        padding-top: 300px;
+    header:after,
+    footer:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        z-index: 0;
+        background-color: rgba(0,0,0,0.5);
     }
 
     header:before,
@@ -1200,6 +1218,12 @@ select {
 
     .slider {
         max-width: 320px;
+    }
+
+    .slider-item {
+        padding: 5px;
+        margin: 10px 5px;
+        border: none;
     }
 
     .work-space {
