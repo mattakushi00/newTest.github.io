@@ -82,7 +82,7 @@
     }
 
     .sick-item {
-        background: linear-gradient(100deg, var(--red) 70%, var(--orange));;
+        background: #cc3247;
     }
     
     .sickItem-text {

@@ -43,4 +43,8 @@
     .healItem_bgYellow {
         background: radial-gradient(circle farthest-side at 30px 20px, #FFE600, #FFA100);
     }
+
+    .select:before {
+        display: none !important;
+    }
 }

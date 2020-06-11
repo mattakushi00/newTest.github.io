@@ -6,6 +6,7 @@
 
     hide('sick-item');
     hide('consist-item');
+    hide('healItem');
 
     firstBlock('order-title', 'animation-fadeIn');
     firstBlock('order-left', 'animation-moveRight');
@@ -16,8 +17,10 @@
 
     window.addEventListener('scroll', function () {
         arrAnime('sick-item', 'animation-moveLeft', 'animation-moveRight');
-        arrAnime('consist-item', 'animation-moveLeft', 'animation-fadeIn');
+        arrAnime('consist-item', 'animation-fadeIn', 'animation-fadeIn');
         simpleAnimation('sick-title', 'animation-fadeIn',0);
+        simpleAnimation('healItem', 'animation-moveLeft',1);
+        simpleAnimation('healItem', 'animation-moveRight',0);
         simpleAnimation('heal-title', 'animation-fadeIn',0);
         simpleAnimation('safe-title', 'animation-fadeIn',0);
         simpleAnimation('consist-title', 'animation-fadeIn',0);

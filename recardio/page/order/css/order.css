@@ -82,7 +82,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 242px;
+    max-width: 290px;
 }
 
 .listBottom-item {
@@ -292,8 +292,12 @@
     .order-logo_mobile {
         display: block;
         margin-bottom: 15px;
+        width: 100%;
     }
 
+    .order-left {
+        max-width: 490px;
+    }
 
     .order-title {
         font-size: 48px;
@@ -303,13 +307,23 @@
     .order-list {
         display: flex;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         margin-bottom: 0;
         flex-wrap: wrap;
     }
 
-    .listTop {
+    .listTop,
+    .listBottom {
         margin: 10px 20px 10px 0;
+    }
+
+    .listBottom {
+        max-width: 240px;
+    }
+
+    .listBottom-item {
+        max-width: 100%;
+        flex: 1 0 100%;
     }
 
     .order-right {
@@ -384,10 +398,6 @@
     .order-list {
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    .listTop {
-        margin: 10px 0;
     }
 
     .listBottom,

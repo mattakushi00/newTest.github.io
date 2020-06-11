@@ -165,6 +165,33 @@ input, select, button {
     display: block;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.select {
+    position: relative;
+}
+
+.select:before {
+    content: ">";
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    z-index: 2;
+    width: 30px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
 .text-fire {
     background: linear-gradient(91deg, var(--red), var(--orange));
     -webkit-background-clip: text;
