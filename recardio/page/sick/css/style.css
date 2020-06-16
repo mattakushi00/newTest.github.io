@@ -25,6 +25,7 @@
 @media all and (-webkit-min-device-pixel-ratio:0) {
     .sick-title span.text-fire {
         color: #FFA100;
+        background: none;
     }
 }
 
