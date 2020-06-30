@@ -40,6 +40,22 @@
     .tiredList-item10 {
         color: #a23c59;
     }
+
+    .effects-img {
+        flex: 1 0 320px;
+    }
+
+    .milti-imgs {
+        flex: 1 0 690px;
+    }
+
+    .spec-main {
+        flex: 1 0 715px;
+    }
+
+    .fake-left {
+        flex: 1 0 570px;
+    }
 }
 
 

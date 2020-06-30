@@ -88,10 +88,15 @@ button {
     position: relative;
 }
 
-header {
+header,
+.footer {
     background: url("../img/order-bg.png") no-repeat center;
     background-size: cover;
     padding: 75px 0 260px;
+}
+
+footer {
+    padding-bottom: 30px;
 }
 
 .order {
@@ -1025,7 +1030,7 @@ select, input {
 .weeks {
     background-color: #fafafa;
     background-size: 100%;
-    padding: 300px 0 100px;
+    padding: 300px 0 30px;
     position: relative;
     z-index: 1;
     margin-top: -295px;
@@ -1128,6 +1133,14 @@ select, input {
     padding: 5px;
 }
 
+.weeks-footer {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--violet);
+    font-weight: 900;
+    font-size: 24px;
+}
+
 .spec {
     padding: 80px 0;
     background: url("../img/spec-bg.png") no-repeat center;
@@ -1191,6 +1204,162 @@ select, input {
     width: 100%;
     max-height: 421px;
     height: 100%;
+}
+
+.comment {
+    padding: 65px 0;
+    position: relative;
+    background: url("../img/comment-bg.png") no-repeat 50% 100%;
+    background-size: 2000px;
+}
+
+.comment-title {
+    font-size: 60px;
+    font-weight: 900;
+    color: var(--violet);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 65px;
+}
+
+.comment-block {
+    background-color: #dcfff4;
+    border-radius: 30px;
+    padding-bottom: 35px;
+    position: relative;
+}
+
+.commentBlock-title {
+    background-color: #385a50;
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 25px 0 30px 25px;
+    margin-bottom: 45px;
+    color: #fff;
+    border-radius: 30px 30px 0 0;
+}
+
+.commentBlock-main {
+    max-width: 820px;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 320px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.comment-avatar {
+    display: block;
+    max-width: 220px;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.comment-text {
+    font-size: 20px;
+    display: block;
+    flex: 1 0 300px;
+}
+
+.comment-dots {
+    max-width: 100%;
+    width: 100%;
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: center;
+}
+
+.comment-dot {
+    width: 19px;
+    height: 19px;
+    margin: 0 11px;
+    border-radius: 50%;
+    border: 2px solid #385a50;
+}
+
+.comment-dot_active {
+    background-color: #385a50;
+}
+
+.comment-arrows {
+    display: flex;
+    justify-content: space-between;
+    max-width: 950px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+
+}
+
+.svg-inline--fa {
+    width: 30px;
+}
+
+.svg-inline--fa path {
+    fill: #385a50;
+}
+
+.fake {
+    background-color: #fafafa;
+    padding-top: 300px;
+    margin-top: -300px;
+    padding-bottom: 65px;
+}
+
+.fake-block {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fake-left {
+    max-width: 570px;
+    flex: 1 0 290px;
+    margin-right: 10px;
+}
+
+.fake-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--darkGreen);
+    margin-bottom: 55px;
+}
+
+.fake-text {
+    font-size: 24px;
+}
+
+.fake-text_pink {
+    text-transform: uppercase;
+    color: var(--violet);
+}
+
+.fake-right {
+    background: url("../img/product-fake-before.png") no-repeat center;
+    background-size: 100%;
+    max-width: 415px;
+}
+
+.product_fake {
+    display: block;
+    width: 100%;
+    max-width: 170px;
+    margin: 0 auto;
+}
+footer {
+    padding-top: 20px;
+    text-align: center;
+}
+
+a {
+    color: var(--darkGreen);
 }
 
 /*
@@ -1456,6 +1625,30 @@ select, input {
         display: none;
     }
 
+    .commentBlock-main {
+        padding: 0 40px;
+    }
+
+    .fake {
+        padding-bottom: 20px;
+    }
+
+    .fake-title {
+        text-align: center;
+    }
+
+    .fake-left {
+        margin: 0 auto;
+    }
+
+    .fake-right {
+        display: none;
+    }
+
+    .footerOrder {
+        padding-bottom: 175px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -1548,6 +1741,32 @@ select, input {
 
     .weeks:before {
         display: none;
+    }
+
+    .commentBlock-main {
+        padding: 0 15px;
+    }
+
+    .comment-avatar {
+        margin: 0 auto 20px;
+    }
+
+    .comment-text {
+        max-width: 100%;
+        flex:   1 0 100%;
+    }
+
+    .comment-arrows {
+        bottom: 0;
+        top: initial;
+    }
+
+    .placehold {
+        display: none;
+    }
+
+    .footer-texts {
+        margin: 0 auto;
     }
 
 }
@@ -1663,6 +1882,10 @@ select, input {
 
     .spec-title {
         margin-bottom: 20px;
+    }
+
+    .fake-title {
+        font-size: 38px;
     }
 
 }
