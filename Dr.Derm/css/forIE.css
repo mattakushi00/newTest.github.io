@@ -60,6 +60,52 @@
     .alarm-right {
         flex: 1 0 610px;
     }
+
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (max-width: 991px) {
+    .order-product::after,
+    .order-product::before {
+        display: none;
+    }
+
+
+    .effects-img {
+        flex: 1 0 200px;
+        max-width: 200px;
+    }
+
+    .order2-left {
+        flex: 1 0 300px;
+        max-width: 300px;
+    }
+
+    .weeks-list {
+        max-width: 300px;
+    }
+
+    .alarm-right {
+        flex: 0 1 300px;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (max-width: 578px) {
+    .order-right {
+        max-width: 300px;
+    }
+
+    .effects-img {
+        flex: 1 0 100px;
+        max-width: 100px;
+    }
+
+    .milti-imgs,
+    .spec-main,
+    .fake-left {
+        max-width: 300px;
+    }
+}
+
+
 
 

@@ -74,6 +74,27 @@ button {
 
 select {
     -webkit-appearance: none;
+    background-color: #fff;
+}
+
+.select {
+    position: relative;
+}
+
+.select:before {
+    content: "";
+    display: block;
+    background: url("../img/sort-down-solid.svg") no-repeat center;
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    top: 0;
+    margin: auto;
+    z-index: 2;
+    width: 30px;
+    height: 26px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .wrapper {
@@ -1246,7 +1267,7 @@ select, input {
 }
 
 .comment {
-    padding: 65px 0;
+    padding: 65px 0 130px;
     position: relative;
     background: url("../img/comment-bg.png") no-repeat 50% 100%;
     background-size: 2000px;
