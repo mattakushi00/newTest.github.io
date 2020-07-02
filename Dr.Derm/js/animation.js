@@ -1,136 +1,90 @@
-(function animation() {
-    titleHide('h1');
-    titleHide('h2');
-    hide('effects-img');
-    hide('order2-left');
-    hide('order2-right');
-    hide('multi-img');
-    hide('multiList-item');
-    hide('exacList-item');
-    hide('plus-item');
-    hide('weekList-item');
-    hide('product_fake');
-    hide('fake-right');
-    hide('mistakesList-item');
-    setTimeout(function () {
-        simpleAnimation('order-title', 'animation-fadeIn')
-    }, 1000);
+animationFirstBlock('.order-product', 'animation-moveRight');
+animationFirstBlock('.order-right', 'animation-moveLeft');
+animationFirstBlock('.order-left', 'animation-fadeIn');
+animationSimple('.effects-title', 'animation-fadeIn');
+animationSimple('.mistake-title', 'animation-fadeIn');
+animationSimple('.exac-title', 'animation-fadeIn');
+animationSimple('.tired-title', 'animation-fadeIn');
+animationSimple('.order2-title', 'animation-fadeIn');
+animationSimple('.multi-title', 'animation-fadeIn');
+animationSimple('.weeks-title', 'animation-fadeIn');
+animationSimple('.plus-title', 'animation-fadeIn');
+animationSimple('.spec-title', 'animation-fadeIn');
+animationSimple('.fake-title', 'animation-fadeIn');
+animationSimple('.comment-title', 'animation-fadeIn');
+animationSimple('.order2-left', 'animation-moveRight');
+animationSimple('.order2-right', 'animation-moveLeft');
+animationSimple('.product_fake', 'animation-moveLeft');
+animationSimple('.fake-right', 'animation-fadeIn');
+animationSimple('.exacList-item', 'animation-moveRight', 'animation-moveRight');
+animationSimple('.effects-img', 'animation-fadeIn');
+animationSimple('.mistakesList-item', 'animation-fadeIn');
+animationReverse('.multi-img', 'animation-moveRight');
+animationReverse('.multiList-item', 'animation-moveLeft');
+animationSimple('.plus-item', 'animation-fadeIn');
+animationReverse('.weekList-item', 'animation-fadeIn');
 
+function hide(arr) { /*скрываем элементы*/
+    let element = document.querySelectorAll(arr);
+    for (let i = 0; i < element.length; i++) {
+        element[i].style.opacity = '0';
+    }
+}
+
+function position(el) { /*определяем кооординаты элемента*/
+    let element = document.querySelectorAll(el),
+        elementBorder = window.pageYOffset + element[0].getBoundingClientRect().top,
+        windowHeight = document.documentElement.clientHeight,
+        visibleBottom = window.pageYOffset + windowHeight - 200,
+        pos = {
+            element: element,
+            elementBorder: elementBorder,
+            windowHeight: windowHeight,
+            visibleBottom: visibleBottom
+        };
+    return pos;
+}
+
+function animationSimple(arr, animation) {/*в аргументы передааем: arr = DOM элемент, animation = анимация*/
+    hide(arr);
     window.addEventListener('scroll', function () {
-        simpleAnimation('effects-title', 'animation-fadeIn');
-        simpleAnimation('effects-img', 'animation-moveRight');
-        simpleAnimation('effects-img', 'animation-fadeIn', 1);
-        simpleAnimation('effects-img', 'animation-moveLeft', 2);
-        simpleAnimation('exac-title', 'animation-fadeIn');
-        simpleAnimation('mistake-title', 'animation-fadeIn');
-        simpleAnimation('tired-title', 'animation-fadeIn');
-        simpleAnimation('order2-title', 'animation-fadeIn');
-        simpleAnimation('multi-title', 'animation-fadeIn');
-        simpleAnimation('plus-title', 'animation-fadeIn');
-        simpleAnimation('weeks-title', 'animation-fadeIn');
-        simpleAnimation('spec-title', 'animation-fadeIn');
-        simpleAnimation('comment-title', 'animation-fadeIn');
-        simpleAnimation('fake-title', 'animation-fadeIn');
-        simpleAnimation('order2-left', 'animation-moveRight');
-        simpleAnimation('order2-right', 'animation-moveLeft');
-        simpleAnimation('product_fake', 'animation-moveLeft');
-        simpleAnimation('fake-right', 'animation-fadeIn');
-        arrAnime('exacList-item', 'animation-moveRight', 'animation-moveRight');
-        arrAnime('multiList-item', 'animation-fadeIn', 'animation-fadeIn');
-        arrAnimeTimer('mistakes-list', 'animation-fadeIn');
-        arrAnimeTimerReverse('milti-imgs', 'animation-moveRight');
-        arrAnimeTimer('plus-items', 'animation-fadeIn');
-        arrAnimeTimerReverse('weeks-list', 'animation-fadeIn');
+        let pos = position(arr);
+        /*определяем кооординаты для конкретного элемента*/
+        if (pos.visibleBottom > pos.elementBorder) {
+            for (let i = 0; i < pos.element.length; i++) {
+                setTimeout(function () {
+                    pos.element[i].classList.add(animation);
+                    pos.element[i].style.opacity = '1';
+                }, i * 300);
+            }
+        }
     }, false);
+}
 
-
-    function simpleAnimation(el, animation, i = 0) {
-        var element = document.getElementsByClassName(el)[i],
-            elementBorder = window.pageYOffset + element.getBoundingClientRect().top,
-            windowHeight = document.documentElement.clientHeight,
-            visibleBottom = window.pageYOffset + windowHeight - 200;
-        if (visibleBottom > elementBorder) {
-            element.classList.add(animation);
-            element.style.opacity = '1';
-        }
-    }
-
-    function titleHide(el) {
-        var domEl = document.getElementsByTagName(el);
-        var arr = [];
-        for (el of domEl) {
-            arr.push(el)
-        }
-        arr.forEach(function (el) {
-            el.style.opacity = '0';
-        })
-    }
-
-    function arrAnime(arr, animation1, animation2) {
-        var element = document.getElementsByClassName(arr);
-        for (var i = 0; i < element.length; i++) {
-            var elementBorder = window.pageYOffset + element[i].getBoundingClientRect().top,
-                windowHeight = document.documentElement.clientHeight,
-                visibleBottom = window.pageYOffset + windowHeight - 200;
-            if (visibleBottom > elementBorder) {
-                if (i % 2 !== 1) {
-                    element[i].classList.add(animation1);
-                    element[i].style.opacity = '1';
-                }
-                else {
-                    element[i].classList.add(animation2);
-                    element[i].style.opacity = '1';
-                }
-            }
-        }
-    }
-
-    function arrAnimeTimer(arr, animation) {
-        var element = document.getElementsByClassName(arr)[0],
-            elementBorder = window.pageYOffset + element.getBoundingClientRect().top,
-            windowHeight = document.documentElement.clientHeight,
-            visibleBottom = window.pageYOffset + windowHeight - 200,
-            arr = [];
-        element.childNodes.forEach(function (element) {
-            if (element.nodeName !== '#text') {
-                arr.push(element);
-            }
-        });
-        if (visibleBottom > elementBorder) {
-            for (let i = 0; i < arr.length; i++) {
+function animationReverse(arr, animation) {
+    hide(arr);
+    window.addEventListener('scroll', function () {
+        let pos = position(arr);
+        if (pos.visibleBottom > pos.elementBorder) {
+            for (
+                let i = pos.element.length - 1, j = 0;
+                i >= 0, j < pos.element.length;
+                i--, j++
+            ) {
                 setTimeout(function () {
-                    arr[i].classList.add(animation);
-                    arr[i].style.opacity = '1';
-                }, i * 700);
-            }
-        }
-    }
-
-    function arrAnimeTimerReverse(arr, animation) {
-        var element = document.getElementsByClassName(arr)[0],
-            elementBorder = window.pageYOffset + element.getBoundingClientRect().top,
-            windowHeight = document.documentElement.clientHeight,
-            visibleBottom = window.pageYOffset + windowHeight - 200,
-            arr = [];
-        element.childNodes.forEach(function (element) {
-            if (element.nodeName !== '#text') {
-                arr.push(element);
-            }
-        });
-        if (visibleBottom > elementBorder) {
-            for (let i = arr.length - 1, j = 0; i >= 0, j < arr.length; i--, j++) {
-                setTimeout(function () {
-                    arr[i].classList.add(animation);
-                    arr[i].style.opacity = '1';
+                    pos.element[i].classList.add(animation);
+                    pos.element[i].style.opacity = '1';
                 }, j * 300);
             }
         }
-    }
+    }, false);
+}
 
-    function hide(arr) {
-        var element = document.getElementsByClassName(arr);
-        for (var i = 0; i < element.length; i++) {
-            element[i].style.opacity = '0';
-        }
+function animationFirstBlock(val, animation) {
+    hide(val);
+    let element = document.querySelectorAll(val);
+    for (let el of element) {
+        el.classList.add(animation);
+        el.style.opacity = '1';
     }
-})();
+}
