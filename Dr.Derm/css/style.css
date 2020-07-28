@@ -1498,8 +1498,9 @@ a {
 
     .order .order-product {
         position: static;
-        margin: 10px;
-        flex: 1 0 150px;
+        margin: 10px 0;
+        flex: 1 0 100px;
+        max-width: 200px;
     }
 
     .order-left {
@@ -1911,8 +1912,25 @@ a {
         font-size: 65px;
     }
 
+    .orderList-img {
+        max-width: 20px;
+        margin-right: 10px;
+    }
+
     .order-info {
-        flex: 0 0 270px;
+        flex: 0 0 190px;
+    }
+
+    .orderList-text {
+        font-size: 18px;
+    }
+
+    .newPrices-price {
+        font-size: 45px;
+    }
+
+    .oldPrice {
+        font-size: 16px;
     }
 
     label, button {
