@@ -1445,6 +1445,11 @@ footer a {
         .every2Item-text {
             opacity: 1;
         }
+
+        .rescue-blockImg:before {
+            background: none;
+            display: none;
+        }
     }
 }
 
