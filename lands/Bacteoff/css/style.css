@@ -1179,7 +1179,11 @@ footer a {
     }
 
     .wrap section {
-        padding: 60px 0 30px;
+        padding: 20px 0;
+    }
+
+    .wrap .order {
+        padding: 60px 0 20px;
     }
 
     .order:before {
@@ -1350,6 +1354,7 @@ footer a {
     }
 
     .spec-text {
+        padding-top: 0;
         margin-bottom: 5px;
     }
 
