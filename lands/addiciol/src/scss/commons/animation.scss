@@ -1,0 +1,45 @@
+.animation-fadeIn {
+	animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes btn {
+	from {
+		transform: scale(1) rotate(0);
+		box-shadow: 0 0 5px rgba(0, 0, 0, .9);
+	}
+
+	20% {
+		transform: scale(1.1) rotate(0);
+		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+	}
+
+	40% {
+		transform: scale(1.1) rotate(5deg);
+		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+	}
+
+	60% {
+		transform: scale(1.1) rotate(-5deg);
+		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+	}
+
+	80% {
+		transform: scale(1.1) rotate(0);
+		box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+	}
+
+	to {
+		transform: scale(1) rotate(0);
+		box-shadow: 0 0 5px rgba(0, 0, 0, .9);
+	}
+}
